@@ -5,6 +5,7 @@ import { INDEX_NAME } from "./lib/constants";
 import { searchClient } from "./lib/utils";
 import Hit from "./components/hit";
 import { AppProvider } from "./components/app-context";
+import Pagination from "./components/ui/pagination";
 
 const App = () => {
   return (
@@ -30,7 +31,7 @@ const App = () => {
                 />
               </main>
               <div className="h-16 p-4 mt-auto border-t">
-                <div>Footer</div>
+                <Pagination />
               </div>
             </div>
           </div>
