@@ -10,6 +10,34 @@ import RangeSlider from "./ui/range-slider";
 
 const filters = [
   {
+    id: "types",
+    label: "Types",
+    children: [
+      {
+        id: "type",
+        attribute: "type",
+        props: {
+          searchablePlaceholder: "Search for a pokemon type",
+        },
+        component: FiltersList,
+      },
+    ],
+  },
+  {
+    id: "versions",
+    label: "Game Versions",
+    children: [
+      {
+        id: "game_versions",
+        attribute: "gameVersions",
+        props: {
+          searchablePlaceholder: "Search for a game version",
+        },
+        component: FiltersList,
+      },
+    ],
+  },
+  {
     id: "stats",
     label: "Stats",
     children: [
@@ -48,34 +76,6 @@ const filters = [
         attribute: "base.Speed",
         label: "Speed",
         component: RangeSlider,
-      },
-    ],
-  },
-  {
-    id: "types",
-    label: "Types",
-    children: [
-      {
-        id: "type",
-        attribute: "type",
-        props: {
-          searchablePlaceholder: "Search for a pokemon type",
-        },
-        component: FiltersList,
-      },
-    ],
-  },
-  {
-    id: "versions",
-    label: "Game Versions",
-    children: [
-      {
-        id: "game_versions",
-        attribute: "game_versions",
-        props: {
-          searchablePlaceholder: "Search for a game version",
-        },
-        component: FiltersList,
       },
     ],
   },
