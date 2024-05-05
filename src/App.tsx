@@ -1,10 +1,8 @@
-import algoliasearch from "algoliasearch/lite";
 import { InstantSearch } from "react-instantsearch";
-import { APP_ID, INDEX_NAME, SEARCH_API_KEY } from "./lib/constants";
-import Sidebar from "./components/sidebar";
 import { Header } from "./components/header";
-
-const searchClient = algoliasearch(APP_ID, SEARCH_API_KEY);
+import Sidebar from "./components/sidebar";
+import { INDEX_NAME } from "./lib/constants";
+import { searchClient } from "./lib/utils";
 
 const App = () => {
   return (
