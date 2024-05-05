@@ -2,6 +2,8 @@ import { Filter } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Stats } from "react-instantsearch";
+import { FiltersMenu } from "./filters-menu";
 
 function MobileMenu() {
   return (
@@ -20,7 +22,8 @@ function MobileMenu() {
           <img src="/pokeball.png" alt="Pokeball icon" className="size-6" />
           <span className="">Pokedex</span>
         </a>
-        <div>Filters</div>
+        <FiltersMenu />
+        <Stats />
       </SheetContent>
     </Sheet>
   );

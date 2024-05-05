@@ -1,3 +1,6 @@
+import { Stats } from "react-instantsearch";
+import { FiltersMenu } from "./filters-menu";
+
 function Sidebar() {
   return (
     <>
@@ -18,10 +21,10 @@ function Sidebar() {
             </a>
           </div>
           <div className="flex flex-col flex-1 gap-2 px-4 overflow-y-scroll">
-            <div>Filters</div>
+            <FiltersMenu />
           </div>
           <div className="grid items-center justify-center p-5 mt-auto border-t">
-            Footer
+            <Stats />
           </div>
         </div>
       </div>
