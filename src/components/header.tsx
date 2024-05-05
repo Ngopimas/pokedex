@@ -1,4 +1,5 @@
 import { Autocomplete } from "./autocomplete";
+import { LanguageSwitcher } from "./language-switcher";
 import MobileMenu from "./mobile-menu";
 
 import { searchClient } from "@/lib/utils";
@@ -15,7 +16,7 @@ export function Header() {
           openOnFocus
         />
       </div>
-      <div>Languages</div>
+      <LanguageSwitcher />
     </header>
   );
 }
