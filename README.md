@@ -4,6 +4,8 @@
 
 This Pokedex is a responsive web application that enables users to search for Pokémon using Algolia, including a language switcher to display Pokémon names in multiple languages and dynamic search features with filters.
 
+![preview](https://github.com/Ngopimas/pokedex/assets/49529524/c3461823-434e-4380-a4af-76f513e44f19)
+
 ## Stack
 
 - Algolia -> [Doc](https://www.algolia.com/doc/)
