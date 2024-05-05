@@ -12,13 +12,11 @@ import { SearchClient } from "algoliasearch/lite";
 import { BaseItem } from "@algolia/autocomplete-core";
 import { autocomplete, AutocompleteOptions } from "@algolia/autocomplete-js";
 import { createLocalStorageRecentSearchesPlugin } from "@algolia/autocomplete-plugin-recent-searches";
-import { createQuerySuggestionsPlugin } from "@algolia/autocomplete-plugin-query-suggestions";
 import { usePagination, useSearchBox } from "react-instantsearch";
 
 import { debounce } from "@algolia/autocomplete-shared";
 
 import "@algolia/autocomplete-theme-classic";
-import { INSTANT_SEARCH_QUERY_SUGGESTIONS } from "@/lib/constants";
 
 type AutocompleteProps = Partial<AutocompleteOptions<BaseItem>> & {
   searchClient: SearchClient;
@@ -57,33 +55,7 @@ export function Autocomplete({
       },
     });
 
-    const querySuggestions = createQuerySuggestionsPlugin({
-      searchClient,
-      indexName: INSTANT_SEARCH_QUERY_SUGGESTIONS,
-      getSearchParams() {
-        return recentSearches.data!.getAlgoliaSearchParams({
-          hitsPerPage: 6,
-        });
-      },
-      transformSource({ source }) {
-        return {
-          ...source,
-          sourceId: "querySuggestionsPlugin",
-          onSelect({ item }) {
-            setInstantSearchUiState({ query: item.query });
-          },
-          getItems(params) {
-            if (!params.state.query) {
-              return [];
-            }
-
-            return source.getItems(params);
-          },
-        };
-      },
-    });
-
-    return [recentSearches, querySuggestions];
+    return [recentSearches];
   }, []);
 
   const debouncedSetInstantSearchUiState = debounce(
